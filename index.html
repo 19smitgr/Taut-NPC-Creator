@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Character Generator</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            Taut NPC Creator
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+        <div class="jumbotron">
+            <div class="form-group">Upload an existing JSON file <input type="file" id="uploadJSON" onchange="uploadJSON(this.files)"></div>
+        </div>
+        <div class="jumbotron">
+            <div class="form-group" id="createQuest">
+                Create a quest?
+                <input id="createQuestCheckbox" type="checkbox" onclick="toggleQuestForm()">
+            </div>
+            <div class="form-group" id="createQuestForm">
+                <div class="jumbotron">
+                    <div class="form-group">Quest Name: <input class="form-control" id="questName"></input></div>
+                    <div class="form-group">Quest Dialogue: <textarea class="form-control" id="questDialogue"></textarea></div>
+                    <div class="form-group">Conditions for quest (use variable names separated with commas): <input class="form-control" id="questConditions"></input></div>
+                </div>
+                <div class="jumbotron form-group">
+                    <div class="form-group">Reward Conditions (flag names): <input class="form-control" id="rewardConditions"></input></div>
+                    <div class="form-group">Item rewards for the quest (put item id): <input class="form-control" id="itemID" type="number" name="quantity"></div>
+                    <div class="form-group">Gary Power reward for quest: <input class="form-control" id="GPAmount" type="number" name="quantity"></div>
+                    <div class="form-group">Reward Dialogue: <textarea class="form-control" id="rewardDialogue"></textarea></div>
+                    <div class="form-group">Give a flag name to prevent user from always getting rewards: <input class="form-control" id="preventFutureReward"></input></div>
+                </div>
+            </div>
+        </div>
+        <div class="jumbotron">
+            <div class="form-group">
+                Sprite Name: <input class="form-control" id="name"></input>
+            </div>
+            <div class="form-group">
+                Default Dialogue: <textarea class="form-control" id="dialogue_message"></textarea>
+            </div>
+            <div class="form-group">
+                Sprite ID: <input class="form-control" id="spriteID" type="number" name="quantity">
+            </div>
+            <div id="location">
+                <div class="form-group">Screen ID: <input class="form-control" id="screenID" type="number" name="quantity"></div>
+                <div class="form-group">Coordinates on the screen:
+                    <div class="form-inline">
+                        <div class="form-group">x: <input class="form-control" id="coordsOnScreenX" type="number" name="quantity"></div>
+                        <div class="form-group">y: <input class="form-control" id="coordsOnScreenY" type="number" name="quantity"></div> 
+                    </div>
+                </div>
+            </div>
+            <div class="text-center"><div class="btn btn-success" onclick="generateJSONFile()">Save</div></div>
+        </div>
+    </div>
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="app.js"></script>
+</body>
+</html>
